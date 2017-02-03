@@ -17,6 +17,33 @@ MainWindow::MainWindow(QWidget *parent) :
     this->cont2=0;
 
     connect(ui->tableWidget, SIGNAL(itemSelectionChanged()), this, SLOT(changeImages()));
+
+    ui->label->setFixedHeight(1000);
+    ui->label_2->setFixedHeight(1000);
+    ui->label_3->setFixedHeight(1000);
+
+    ui->scrollArea->setWidget(ui->label);
+    ui->scrollArea->setWidgetResizable(true);
+    ui->label->setSizePolicy(QSizePolicy::Maximum,QSizePolicy::Maximum);
+
+    ui->scrollArea_2->setWidget(ui->label_2);
+    ui->scrollArea_2->setWidgetResizable(true);
+    ui->label_2->setSizePolicy(QSizePolicy::Maximum,QSizePolicy::Maximum);
+
+    ui->scrollArea_3->setWidget(ui->label_3);
+    ui->scrollArea_3->setWidgetResizable(true);
+    ui->label_3->setSizePolicy(QSizePolicy::Maximum,QSizePolicy::Maximum);
+
+    ui->scrollArea_2->verticalScrollBar()->setEnabled(false);
+    ui->scrollArea_2->horizontalScrollBar()->setEnabled(false);
+    ui->scrollArea_2->verticalScrollBar()->setVisible(false);
+    ui->scrollArea_2->horizontalScrollBar()->setVisible(false);
+
+    ui->scrollArea_3->verticalScrollBar()->setEnabled(false);
+    ui->scrollArea_3->horizontalScrollBar()->setEnabled(false);
+    ui->scrollArea_3->verticalScrollBar()->setVisible(false);
+    ui->scrollArea_3->horizontalScrollBar()->setVisible(false);
+
 }
 
 MainWindow::~MainWindow()
@@ -88,6 +115,8 @@ void MainWindow::changeImages(){
 
 
     this->pix.load(path);
+    this->w = this->pix.width();
+    this->h = this->pix.height();
     ui->label->setPixmap(this->pix);
     ui->label->update();
 
@@ -111,4 +140,31 @@ void MainWindow::on_pushButton_4_clicked()
 {
     this->cont2++;
     ui->lcdNumber_2->display(this->cont2);
+}
+
+void MainWindow::on_pushButton_2_clicked()
+{
+
+    this->w = this->w*1.1;
+    this->h = this->h*1.1;
+
+
+    ui->label->setPixmap(this->pix.scaled(this->w,this->h,Qt::KeepAspectRatio));
+    ui->label_2->setPixmap(this->pix.scaled(this->w,this->h,Qt::KeepAspectRatio));
+    ui->label_3->setPixmap(this->pix.scaled(this->w,this->h,Qt::KeepAspectRatio));
+
+    //ui->label->setMaximumHeight(1000);
+
+}
+
+void MainWindow::on_pushButton_5_clicked()
+{
+    this->w = this->w*0.9;
+    this->h = this->h*0.9;
+
+
+    ui->label->setPixmap(this->pix.scaled(this->w,this->h,Qt::KeepAspectRatio));
+    ui->label_2->setPixmap(this->pix.scaled(this->w,this->h,Qt::KeepAspectRatio));
+    ui->label_3->setPixmap(this->pix.scaled(this->w,this->h,Qt::KeepAspectRatio));
+
 }

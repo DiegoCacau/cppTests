@@ -18,8 +18,8 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>30</y>
-      <width>191</width>
+      <y>40</y>
+      <width>211</width>
       <height>631</height>
      </rect>
     </property>
@@ -30,9 +30,9 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>30</y>
-      <width>191</width>
+      <x>260</x>
+      <y>40</y>
+      <width>211</width>
       <height>631</height>
      </rect>
     </property>
@@ -43,9 +43,9 @@
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>460</x>
-      <y>30</y>
-      <width>191</width>
+      <x>530</x>
+      <y>40</y>
+      <width>221</width>
       <height>631</height>
      </rect>
     </property>
@@ -134,7 +134,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Path 2</string>
+     <string>Path 2: +1</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_4">
@@ -147,7 +147,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Path 3</string>
+     <string>Path 3: +1</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_5">
@@ -216,6 +216,114 @@
 background-color:rgb(255, 255, 255)</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>85</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>zoom in</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_5">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>0</y>
+      <width>85</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>zoom out</string>
+    </property>
+   </widget>
+   <widget class="QScrollArea" name="scrollArea">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>39</y>
+      <width>211</width>
+      <height>631</height>
+     </rect>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>209</width>
+       <height>629</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>381</y>
+      <width>211</width>
+      <height>631</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QScrollArea" name="scrollArea_2">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>40</y>
+      <width>211</width>
+      <height>631</height>
+     </rect>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>209</width>
+       <height>629</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QScrollArea" name="scrollArea_3">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>40</y>
+      <width>211</width>
+      <height>631</height>
+     </rect>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents_3">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>209</width>
+       <height>629</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -223,7 +331,7 @@ background-color:rgb(255, 255, 255)</string>
      <x>0</x>
      <y>0</y>
      <width>1216</width>
-     <height>25</height>
+     <height>27</height>
     </rect>
    </property>
   </widget>
