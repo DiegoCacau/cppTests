@@ -24,20 +24,26 @@ public:
 
 
 public slots:
+    //update displayed images
     void changeImages();
+    //slots for update position of scrollBar
     void setValueVertical(int);
     void setValueHorizontal(int);
 
 private slots:
+    //load the tableWidget with the file names
     void on_pushButton_clicked();
 
-
+    //update lcd counter
     void on_pushButton_3_clicked();
 
+    //update lcd counter
     void on_pushButton_4_clicked();
 
+    //zoom in
     void on_pushButton_2_clicked();
 
+    //zoom out
     void on_pushButton_5_clicked();
 
 private:
