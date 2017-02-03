@@ -21,14 +21,12 @@ public:
     int cont2;
     int h;
     int w;
-    int max_h = 1000;
-    int max_w = 500;
-    int min_h = 1000;
-    int min_w = 1000;
 
 
 public slots:
     void changeImages();
+    void setValueVertical(int);
+    void setValueHorizontal(int);
 
 private slots:
     void on_pushButton_clicked();

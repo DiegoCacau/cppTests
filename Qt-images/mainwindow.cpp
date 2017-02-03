@@ -6,6 +6,7 @@
 #include <errno.h>
 #include <qdebug.h>
 #include <QTableWidget>
+#include <QScrollBar>
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -43,6 +44,12 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->scrollArea_3->horizontalScrollBar()->setEnabled(false);
     ui->scrollArea_3->verticalScrollBar()->setVisible(false);
     ui->scrollArea_3->horizontalScrollBar()->setVisible(false);
+
+    connect(ui->scrollArea->verticalScrollBar(),SIGNAL(valueChanged(int)),
+            this,SLOT(setValueVertical(int)));
+
+    connect(ui->scrollArea->horizontalScrollBar(),SIGNAL(valueChanged(int)),
+            this,SLOT(setValueHorizontal(int)));
 
 }
 
@@ -97,7 +104,7 @@ void MainWindow::on_pushButton_clicked()
        ui->tableWidget->removeRow(0);
     }
     for(unsigned int i=0; i<files.size();i++){
-        qDebug()<<files[i]<<'\n';
+
         ui->tableWidget->insertRow(ui->tableWidget->rowCount());
         ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, 0, new QTableWidgetItem(files[i]));
     }
@@ -108,7 +115,7 @@ void MainWindow::changeImages(){
     ui->label->clear();
     ui->label->update();
     int n = ui->tableWidget->currentRow();
-    qDebug() << ui->tableWidget->item(n,0)->text();
+
     QString path = ui->textEdit->toPlainText()+ "/"+ui->tableWidget->item(n,0)->text();
     QString path2 = ui->textEdit_2->toPlainText()+ "/"+ui->tableWidget->item(n,0)->text();
     QString path3 = ui->textEdit_3->toPlainText()+ "/"+ui->tableWidget->item(n,0)->text();
@@ -167,4 +174,18 @@ void MainWindow::on_pushButton_5_clicked()
     ui->label_2->setPixmap(this->pix.scaled(this->w,this->h,Qt::KeepAspectRatio));
     ui->label_3->setPixmap(this->pix.scaled(this->w,this->h,Qt::KeepAspectRatio));
 
+}
+
+void MainWindow::setValueVertical(int x)
+{
+    qDebug()<<x<<"\n";
+    ui->scrollArea_2->verticalScrollBar()->setValue(x);
+    ui->scrollArea_3->verticalScrollBar()->setValue(x);
+}
+
+void MainWindow::setValueHorizontal(int x)
+{
+    qDebug()<<x<<"\n";
+    ui->scrollArea_2->horizontalScrollBar()->setValue(x);
+    ui->scrollArea_3->horizontalScrollBar()->setValue(x);
 }
