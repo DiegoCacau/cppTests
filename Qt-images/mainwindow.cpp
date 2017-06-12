@@ -170,8 +170,8 @@ void MainWindow::on_pushButton_2_clicked()
 
 
     ui->label->setPixmap(this->pix.scaled(this->w,this->h,Qt::KeepAspectRatio));
-    ui->label_2->setPixmap(this->pix.scaled(this->w,this->h,Qt::KeepAspectRatio));
-    ui->label_3->setPixmap(this->pix.scaled(this->w,this->h,Qt::KeepAspectRatio));
+    ui->label_2->setPixmap(this->pix2.scaled(this->w,this->h,Qt::KeepAspectRatio));
+    ui->label_3->setPixmap(this->pix3.scaled(this->w,this->h,Qt::KeepAspectRatio));
 
 
 }
@@ -184,8 +184,8 @@ void MainWindow::on_pushButton_5_clicked()
 
 
     ui->label->setPixmap(this->pix.scaled(this->w,this->h,Qt::KeepAspectRatio));
-    ui->label_2->setPixmap(this->pix.scaled(this->w,this->h,Qt::KeepAspectRatio));
-    ui->label_3->setPixmap(this->pix.scaled(this->w,this->h,Qt::KeepAspectRatio));
+    ui->label_2->setPixmap(this->pix2.scaled(this->w,this->h,Qt::KeepAspectRatio));
+    ui->label_3->setPixmap(this->pix3.scaled(this->w,this->h,Qt::KeepAspectRatio));
 
 }
 
