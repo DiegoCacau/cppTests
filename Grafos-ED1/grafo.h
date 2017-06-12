@@ -401,24 +401,6 @@ void pontoArticular(TG* g, int tamanho){
 
 
 
-void buscaConexoesFortes(TG *g, int id, int *vetor, int soma){
-    TNO *n = busca_no(g,id);
-    TViz *viz = n->prim_viz;
-    
-    vetor[id-1] = soma;
-    //printf("%d %d qqq\n", soma, id);
-    while(viz){
-        if(vetor[viz->id_viz - 1] == -1){
-          buscaConexoesFortes(g,viz->id_viz, vetor, soma);  
-        }
-        viz = viz->prox;
-    }
-
-
-    //return soma;
-   
-}
-
 /*adaptado da figura 5.15 do livro de Aho, Hopcroft e Ullman
 https://www.ime.usp.br/~pf/algoritmos_para_grafos/aulas/tarjan.html*/
 static void strongR( TG *g, int v, int *sc) 
@@ -493,8 +475,9 @@ void conexoesFortes(TG *g){
     int al = GRAPHscT(g,posicoes, contador);
    
     for (int j = 0; j < contador; j++)
-    {
-        printf("%d  %d aaa\n", posicoes[j],al);
+    {   
+        if(posicoes[j] != -1)
+        printf("Vertice: %d, Valor:%d\n", (j+1),posicoes[j]);
         
     }
     
